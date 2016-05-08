@@ -29,7 +29,7 @@ div
 br
 br
 h3( align="center" )
-  a( href="https://bosnaufal.github.io/vue-scrollbar" ) Fork Me On Github!
+  a( href="https://github.com/BosNaufal/vue-scrollbar" ) Fork Me On Github!
 </template>
 
 <script>
