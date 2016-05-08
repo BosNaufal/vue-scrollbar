@@ -2,7 +2,7 @@
   "name": "vue-scrollbar",
   "version": "1.0.1",
   "description": "The Simplest Scroll Area Component with custom scrollbar for Vue JS",
-  "main": "./src/js/component/vue-scrollbar.vue",
+  "main": "./src/js/components/vue-scrollbar.vue",
   "scripts": {
     "dev": "webpack-dev-server --inline --hot",
     "build": "webpack -p"
