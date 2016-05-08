@@ -1,0 +1,45 @@
+
+<template lang="jade">
+
+div
+  h1( align="center") Vue Scrollbar
+  vue-scrollbar( classes="my-scrollbar" )
+    .scroll-me
+      .kolom
+      .kolom
+      .kolom
+      .kolom
+      .kolom
+      .kolom
+      .kolom
+      .kolom
+      .kolom
+      .kolom
+      .kolom
+      .kolom
+      .kolom
+      .kolom
+      .kolom
+      .kolom
+      .kolom
+      .kolom
+      .kolom
+      .kolom
+      .clearfix
+br
+br
+h3( align="center" )
+  a( href="https://bosnaufal.github.io/vue-scrollbar" ) Fork Me On Github!
+</template>
+
+<script>
+
+  require('../../sass/main.sass');
+  import vueScrollbar from './vue-scrollbar.vue';
+
+  export default {
+    components: { vueScrollbar }
+  };
+
+
+</script>
