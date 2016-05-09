@@ -1,6 +1,6 @@
 {
   "name": "vue-scrollbar",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "The Simplest Scroll Area Component with custom scrollbar for Vue JS",
   "main": "./src/js/components/vue-scrollbar.vue",
   "scripts": {
