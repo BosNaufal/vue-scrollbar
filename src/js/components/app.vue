@@ -3,7 +3,7 @@
 
 div
   h1( align="center") Vue Scrollbar
-  vue-scrollbar( classes="my-scrollbar" )
+  vue-scrollbar( classes="my-scrollbar" v-bind:speed=53 )
     .scroll-me
       .kolom
       .kolom

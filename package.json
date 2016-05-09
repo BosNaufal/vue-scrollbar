@@ -14,13 +14,15 @@
   "keywords": [
     "vue",
     "component",
+    "web-components",
     "vue js",
     "scrollbar",
     "scroll",
     "scrollbar effect",
     "smooth scroll",
     "custom scrollbar",
-    "slimscroll"
+    "slimscroll",
+    "web-components"
   ],
   "author": "Naufal Rabbani <bosnaufalemail@gmail.com>",
   "license": "MIT",

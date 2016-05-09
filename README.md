@@ -18,7 +18,7 @@ npm install vue-scrollbar
 ```html
 
 <template>
-  <vue-scrollbar classes="my-scrollbar">
+  <vue-scrollbar classes="my-scrollbar" v-bind:speed=100 >
     <div class="should-have-a-children scroll-me">
       <p>And Now</p>
       <p>You Can Put</p>
@@ -57,6 +57,9 @@ Just the ordinary class name for styling the wrapper. It's TOTALLY CUSTOMIZABLE!
   min-width: 750px;
 }
 ```
+
+##### speed (Number)
+The wheel step in pixel. The default is 53 pixel per wheel.
 
 ## Thank You for Making this useful~
 

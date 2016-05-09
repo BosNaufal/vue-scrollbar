@@ -46,6 +46,10 @@
       classes: {
         type: String,
         default: ""
+      },
+      speed: {
+        type: Number,
+        default: 53
       }
     },
 
@@ -72,11 +76,18 @@
 
     methods: {
       scroll(e){
+        e.preventDefault()
+
+        // Set the wheel step
+        let num = this.speed
 
         // DOM events
-        let shift = e.shiftKey
-        this.scrollY = e.deltaY
-        this.scrollX = e.deltaX
+        let shifted = e.shiftKey
+        this.scrollY = e.deltaY > 0 ? num : -(num)
+        this.scrollX = e.deltaX > 0 ? num : -(num)
+
+        // Fix Mozilla Shifted Wheel~
+        if(shifted && e.deltaX == 0) this.scrollX = e.deltaY > 0 ? num : -(num)
 
         // Next Value
         let nextY = this.top + this.scrollY
@@ -87,13 +98,13 @@
         let canScrollX = this.scrollAreaWidth > this.scrollWrapperWidth
 
         // Vertical Scrolling
-        if(canScrollY) {
+        if(canScrollY && !shifted) {
           this.normalizeVertical(nextY)
           this.moveTheScrollbar()
         }
 
         // // Horizontal Scrolling
-        if(shift && canScrollX) {
+        if(shifted && canScrollX) {
           this.normalizeHorizontal(nextX)
           this.moveTheScrollbar()
         }
