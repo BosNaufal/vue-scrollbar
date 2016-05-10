@@ -1,6 +1,6 @@
 # Vue Scrollbar
 
-The Simplest Scroll Area Component with custom scrollbar for [Vue Js](http://vuejs.org/).
+The Simplest Scroll Area Component with custom scrollbar for [Vue Js](http://vuejs.org/). All animation, Height and Width are pure CSS, So it's TOTALLY **CUSTOMIZABLE** and **RESPONSIVE**! YEAH!.
 
 [DEMO](https://bosnaufal.github.io/vue-scrollbar)
 
@@ -29,10 +29,7 @@ npm install vue-scrollbar
 
 <script>
 
-  // Don't forget to import the Scrollbar Sass
-  require('../../sass/_Scrollbar.sass');
-
-  import vueScrollbar from './vue-scrollbar.vue';
+  import vueScrollbar from 'vue-scrollbar';
 
   export default {
     components: { vueScrollbar }
@@ -48,7 +45,8 @@ Just the ordinary class name for styling the wrapper. It's TOTALLY CUSTOMIZABLE!
 ```css
 /*The Wrapper*/
 .my-scrollbar{
-  max-width: 500px;
+  width: 35%;
+  min-width: 300px;
   max-height: 450px;
 }
 

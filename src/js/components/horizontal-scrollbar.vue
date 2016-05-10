@@ -47,6 +47,12 @@
       }
     },
 
+    watch: {
+      'wrapper.width'(val,old){
+        if(val != old) this.calculateSize()
+      }
+    },
+
     methods: {
       startDrag(e){
 
@@ -128,12 +134,15 @@
         this.scrolling.h = next
       },
 
+      calculateSize(){
+        // Scrollbar Width
+        this.width =  this.wrapper.width / this.area.width * 100
+      }
 
     },
 
     ready(){
-      // Scrollbar Width
-      this.width =  this.wrapper.width / this.area.width * 100
+      this.calculateSize()
 
       // Put the Listener
       document.addEventListener("mousemove", this.onDrag)

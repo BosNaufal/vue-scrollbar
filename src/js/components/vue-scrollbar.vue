@@ -40,6 +40,8 @@
   import verticalScrollbar from './vertical-scrollbar.vue';
   import horizontalScrollbar from './horizontal-scrollbar.vue';
 
+  require('../../sass/_Scrollbar.sass');
+
   export default {
 
     props: {
@@ -203,29 +205,40 @@
         let next = vScrollbar / 100 * this.scrollAreaHeight
         if( orientation == 'vertical' ) this.normalizeVertical(next)
         if( orientation == 'horizontal' ) this.normalizeHorizontal(next)
+      },
+
+      calculateSize(){
+        // The Elements
+        let $scrollArea = this.$els.scrollArea
+        let $scrollWrapper = this.$els.scrollWrapper
+
+        // Computed Style
+        let scrollWrapperStyle = window.getComputedStyle($scrollWrapper,null)
+
+        // Scroll Area Height and Width
+        this.scrollAreaHeight = $scrollArea.children[0].clientHeight
+        this.scrollAreaWidth = $scrollArea.children[0].clientWidth
+
+        // Scroll Wrapper Height and Width
+        this.scrollWrapperHeight = parseFloat(scrollWrapperStyle.height)
+        this.scrollWrapperWidth = parseFloat(scrollWrapperStyle.width)
+
+        // Make sure The wrapper is Ready, then render the scrollbar
+        this.ready = true
       }
 
     },
 
     ready(){
+      this.calculateSize()
 
-      // The Elements
-      let $scrollArea = this.$els.scrollArea
-      let $scrollWrapper = this.$els.scrollWrapper
+      // Attach The Event for Responsive View~
+      window.addEventListener('resize', this.calculateSize)
+    },
 
-      // Computed Style
-      let scrollWrapperStyle = window.getComputedStyle($scrollWrapper,null)
-
-      // Scroll Area Height and Width
-      this.scrollAreaHeight = $scrollArea.children[0].clientHeight
-      this.scrollAreaWidth = $scrollArea.children[0].clientWidth
-
-      // Scroll Wrapper Height and Width
-      this.scrollWrapperHeight = parseFloat(scrollWrapperStyle.height)
-      this.scrollWrapperWidth = parseFloat(scrollWrapperStyle.width)
-
-      // Make sure The wrapper is Ready, then render the scrollbar
-      this.ready = true
+    beforeDestroy(){
+      // Remove Event
+      window.removeEventListener('resize', this.calculateSize)
     }
 
 
