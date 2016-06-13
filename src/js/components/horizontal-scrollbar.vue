@@ -153,10 +153,10 @@
 
     beforeDestroy(){
       // Remove the Listener
-      document.addEventListener("mousemove", this.onDrag)
-      document.addEventListener("touchmove", this.onDrag)
-      document.addEventListener("mouseup", this.stopDrag)
-      document.addEventListener("touchend", this.stopDrag)
+      document.removeEventListener("mousemove", this.onDrag)
+      document.removeEventListener("touchmove", this.onDrag)
+      document.removeEventListener("mouseup", this.stopDrag)
+      document.removeEventListener("touchend", this.stopDrag)
     }
 
   };
