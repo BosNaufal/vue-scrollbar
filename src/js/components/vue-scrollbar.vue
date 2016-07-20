@@ -202,7 +202,7 @@
 
       handleChangePosition(vScrollbar, orientation){
         // Convert Percentage to Pixel
-        let next = vScrollbar / 100 * this.scrollAreaHeight
+        let next = vScrollbar / 100 * ( orientation == 'vertical' ? this.scrollAreaHeight : this.scrollAreaWidth )
         if( orientation == 'vertical' ) this.normalizeVertical(next)
         if( orientation == 'horizontal' ) this.normalizeHorizontal(next)
       },
