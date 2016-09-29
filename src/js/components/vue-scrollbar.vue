@@ -35,12 +35,15 @@
 
 </template>
 
+<style lang="sass">
+  @import "../../sass/_Scrollbar.sass";
+</style>
+
 <script>
 
   import verticalScrollbar from './vertical-scrollbar.vue';
   import horizontalScrollbar from './horizontal-scrollbar.vue';
 
-  require('../../sass/_Scrollbar.sass');
 
   export default {
 
